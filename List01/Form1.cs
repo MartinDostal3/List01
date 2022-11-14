@@ -45,5 +45,46 @@ namespace List01
         {
             list.Clear();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+            int min = Int32.MaxValue;
+            int max = Int32.MinValue;
+           
+            if(radioButton1.Checked)
+            {
+
+                for (int i = 0; i < list.Count(); i++)
+                {
+                    int x = list[i];
+                    if (x > max)
+                    {
+                        max = x;
+                  
+
+                    }
+                    if(x < min)
+                    {
+                        min = x;
+                       
+                    }
+
+                }
+
+                int posledniMax = list.LastIndexOf(max);
+                list.Remove(posledniMax);
+                    
+               
+            }
+
+            else
+            {
+                int posledniMin = list.LastIndexOf(min);
+                list.Remove(posledniMin);
+
+
+            }
+        }
     }
 }
