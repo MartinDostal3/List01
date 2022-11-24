@@ -12,6 +12,7 @@ namespace List04
         private void button1_Click(object sender, EventArgs e)
         {
             listBox1.Items.Clear();
+            list.Clear();
             Random rnd = new Random();
 
             int n = int.Parse(textBox1.Text);
@@ -58,8 +59,9 @@ namespace List04
 
 
             }
-           list[indexMax] = min;
-            list[indexMin] = max;
+            if(indexMin >= 0) list[indexMax] = min; 
+            if(indexMax >= 0) list[indexMin] = max;
+         
             listBox2.Items.Clear();
             foreach (int cis in list)
             {
