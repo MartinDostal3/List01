@@ -38,10 +38,9 @@ namespace List09
             Random rnd = new Random();
             index = rnd.Next(0, imageList1.Images.Count);
 
-            if(obrazky[index] != null)
-            {
+     
                 pictureBox1.Image = obrazky[index];
-            }
+         
            
 
 
@@ -54,7 +53,7 @@ namespace List09
             //smazat obrazek v pictureboxu (null)
             //smazat obrázek v list obrázků
             pictureBox1.Image = null;
-            obrazky.RemoveAt(index);
+            obrazky[index] = null;
         }
 
     }
